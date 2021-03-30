@@ -17,4 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 // Route::get('user', "ManagementUserController@index");
-Route::get("/user", [ManagementUserController::class, "index"]);
+// Route::get("/user", [ManagementUserController::class, "index"]);
+Route::get("/home", function(){
+    return view("home", ["nama" => "Akhmad Nur Hidayatulloh", "pelajaran" => ["Algoritma & Pemrograman", "Kalkulus", "Pemrograman Web"]]);
+});
