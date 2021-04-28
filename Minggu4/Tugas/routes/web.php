@@ -20,3 +20,7 @@ Route::get('/', function () {
 //     return view("frontend.home");
 // });
 Route::get('home', [HomeController::class, 'index']);
+
+Route::group(['namespace' => 'backend'], function(){
+    Route::resource('dashboard', 'DashboardController');
+});
