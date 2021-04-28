@@ -1,7 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\frontend\HomeController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +17,10 @@ use App\Http\Controllers\frontend\HomeController;
 Route::get('/', function () {
     return view('welcome');
 });
-// Route::get("home", function(){
-//     return view("frontend.home");
-// });
-Route::get('home', [HomeController::class, 'index']);
+Route::get('logout', function () {
+    return view('welcome');
+});
+
+Route::get('/home', [HomeController::class, 'index']);
+
+Route::resource('dashboard', DashboardController::class);
